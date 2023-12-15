@@ -10,6 +10,7 @@ import { PageSkillsComponent } from './page-skills/page-skills.component';
 import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { CommonModule } from '@angular/common';
+import { LogoBannerComponent } from './logo-banner/logo-banner.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
     PageIntroComponent,
     PageSkillsComponent,
     PageProjectsComponent,
-    PageContactComponent
+    PageContactComponent,
+    LogoBannerComponent
   ],
   imports: [
     BrowserModule,
