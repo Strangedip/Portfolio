@@ -1,10 +1,14 @@
 <div class="float-container">
     <div class="navbar">
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <!-- <li *ngFor="let section of sections">
+                <a id="_{{section.id}}" (click)="scrollTo(section.id)">{{ section.name }}</a>
+            </li> -->
+            <li><a id="section-intro-" (click)="scrollTo('section-intro')">About</a></li>
+            <li><a id="section-skills-" (click)="scrollTo('section-skills')">Skills</a></li>
+            <li><a id="section-projects-" (click)="scrollTo('section-projects')">Projects</a></li>
+            <li><a id="section-contact-" (click)="scrollTo('section-contact')">Contact</a></li>
         </ul>
+        
     </div>
 </div>

@@ -9,7 +9,7 @@ import { PageIntroComponent } from './page-intro/page-intro.component';
 import { PageSkillsComponent } from './page-skills/page-skills.component';
 import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
-import { MainComponent } from './main/main.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,12 @@ import { MainComponent } from './main/main.component';
     PageIntroComponent,
     PageSkillsComponent,
     PageProjectsComponent,
-    PageContactComponent,
-    MainComponent
+    PageContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
