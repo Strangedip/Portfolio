@@ -5,11 +5,15 @@ $color4: #EEEEEE;
 
 .container {
     // background:linear-gradient(135deg, #060606 30%, #0c2b3e 100%);
-    // background:linear-gradient(135deg, #00090e , #072230 );
-    background: linear-gradient(135deg, $color1 , $color2 );
+    background:linear-gradient(135deg, #00090e , #072230 );
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.sections{
+    width: 70%;
+    
 }
 
 .sections {
