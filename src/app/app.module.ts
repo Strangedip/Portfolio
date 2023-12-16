@@ -11,6 +11,7 @@ import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { CommonModule } from '@angular/common';
 import { LogoBannerComponent } from './logo-banner/logo-banner.component';
+import { PageAboutComponent } from './page-about/page-about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LogoBannerComponent } from './logo-banner/logo-banner.component';
     PageSkillsComponent,
     PageProjectsComponent,
     PageContactComponent,
-    LogoBannerComponent
+    LogoBannerComponent,
+    PageAboutComponent
   ],
   imports: [
     BrowserModule,
