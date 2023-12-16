@@ -8,6 +8,7 @@
     width: 100%;
     bottom: 0;
     transition: transform 0.8s cubic-bezier(0.61, 0.07, 0.16, 0.81);
+    z-index: 99;
 }
 
 .float-container.scrolled {
@@ -20,22 +21,22 @@
     width: 750px;
     border-radius: 50px;
     box-shadow:
-        0px 4px 15px rgba(0, 0, 0, 0.1),
-        0px 0px 8px 0px rgba(0, 0, 0, 0.05),
-        inset 0px 12px 20px -10px rgba(131, 131, 131, 0.5);
-    color: #a0a0a0;
-    background: linear-gradient(to bottom right, rgba(24, 24, 24, 0.4), rgba(32, 32, 32, 0.4));
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+        0px 4px 15px rgba(0, 0, 0, 0.2),
+        0px 0px 8px 0px rgba(0, 0, 0, 0.1),
+        inset 0px 12px 20px -10px rgba(131, 131, 131, 0.6);
+    color: #c0c0c0;
+    background: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 172, 181, 0.25);
     transition: box-shadow 0.8s;
 }
 
 .navbar.bottom {
     box-shadow:
-        0px -3px 15px rgba(0, 0, 0, 0.1),
-        0px 0px 8px 0px rgba(0, 0, 0, 0.05),
-        inset 0px -12px 20px -10px rgba(131, 131, 131, 0.5);
+        0px -3px 15px rgba(0, 0, 0, 0.2),
+        0px 0px 8px 0px rgba(0, 0, 0, 0.1),
+        inset 0px -12px 20px -10px rgba(131, 131, 131, 0.6);
     transition: box-shadow 0.8s;
 }
 
@@ -64,12 +65,12 @@ li>a {
 li>a:hover {
     transition: 0.3s;
     color: #ffffff;
-    text-shadow: 0 0 3px #3497da, 0 0 6px #3497da, 0 0 9px #3497da;
+    text-shadow: 0 0 3px #00ADB5, 0 0 6px #00ADB5, 0 0 9px #00ADB5;
 
 }
 
 li>a.active {
     transition: 0.3s;
     color: #ffffff;
-    text-shadow: 0 0 3px #3497da, 0 0 6px #3497da, 0 0 9px #3497da;
+    text-shadow: 0 0 3px #00ADB5, 0 0 6px #00ADB5, 0 0 9px #00ADB5;
 }

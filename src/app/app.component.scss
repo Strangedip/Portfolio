@@ -1,4 +1,41 @@
-.container{
+$color1: #222831;
+$color2: #393E46;
+$color3: #00ADB5;
+$color4: #EEEEEE;
+
+.container {
     // background:linear-gradient(135deg, #060606 30%, #0c2b3e 100%);
-    background:linear-gradient(135deg, #00090e , #072230 );
+    // background:linear-gradient(135deg, #00090e , #072230 );
+    background: linear-gradient(135deg, $color1 , $color2 );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sections {
+    width: 70%;
+
+}
+
+.svg-top {
+    position: absolute;
+    background: none;
+    animation: slideInSvg 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
+.svg-bottom {
+    background: none;
+}
+
+@keyframes slideInSvg {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(100);
+        opacity: 1;
+    }
 }

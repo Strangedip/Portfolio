@@ -1,8 +1,43 @@
-h1{
-    font-size: 2.5rem;
-    position: absolute;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Public+Sans:ital,wght@0,300;1,300;1,400&display=swap');
+
+
+.logo {
+    font-family: "Raleway";
+    font-family: 'Comfortaa', sans-serif;
+    writing-mode: vertical-lr;
+    font-size: 0.8rem;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 2rem;
     color: #fff;
+    cursor: default;
+}
+
+h1 {
+    text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    animation: neon-glow 1.5s infinite alternate-reverse;
+}
+
+@keyframes neon-glow {
+    0%{
+        opacity: 1;
+        text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    }
+    12%{
+        opacity: 0.8;
+        text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    }
+    40%{
+        opacity: 0.6;
+        text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    }
+    75%{
+        opacity: 0.8;
+        text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    }
+    80%{
+        opacity: 0.9;
+        text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 15px #00ADB5;
+    }
 }

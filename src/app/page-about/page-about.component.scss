@@ -1,0 +1,222 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+
+.main {
+    height: 100vh;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    color: #FFF;
+}
+.container{
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* tab setting */
+$tab-count: 4;
+
+
+
+/* selectors relative to radio inputs */
+$label-selector: "~ ul > li";
+$slider-selector: "~ .slider";
+$content-selector: "~ .content > section";
+
+@mixin tabs($label-selector: $label-selector,
+    $slider-selector: $slider-selector,
+    $content-selector: $content-selector) {
+
+    @for $i from 1 through $tab-count {
+        &:nth-of-type(#{$i}):checked {
+            #{$label-selector}:nth-child(#{$i}) {
+                @content;
+            }
+
+            #{$slider-selector} {
+                transform: translateX(#{100% * ($i - 1)});
+            }
+
+            #{$content-selector}:nth-child(#{$i}) {
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+.main {
+    color: #fff;
+    font-family: "Raleway";
+
+    h1 {
+        color: #FFF;
+        text-align: center;
+        font-weight: 400;
+        padding: 3rem;
+    }
+}
+
+.tabs {
+    background: transparent;
+    border: 1px solid rgba(0, 172, 181, 0.25);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    height: 400px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    min-width: #{$tab-count * 60px};
+
+    input[name="tab-control"] {
+        display: none;
+    }
+
+    .content section h2,
+    ul li label {
+        font-family: 'Work Sans', sans-serif;;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #00ADB5;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+
+        li {
+            box-sizing: border-box;
+            flex: 1;
+            width: #{100%/$tab-count};
+            padding: 0 10px;
+            text-align: center;
+
+            label {
+                font-size: 1.2rem;
+                transition: all 0.2s ease-in-out;
+                color: #a0a0a0;
+                padding: 5px auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                white-space: nowrap;
+                -webkit-touch-callout: none;
+
+                br {
+                    display: none;
+                }
+
+                svg {
+                    color: #a0a0a0;
+                    height: 1.1em;
+                    vertical-align: bottom;
+                    margin-right: 0.2em;
+                    transition: color 0.2s ease-in-out;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    outline: 0;
+                    color: lighten(#a0a0a0, 35%);
+
+                    svg {
+                        color: lighten(#a0a0a0, 15%);
+                    }
+                }
+            }
+        }
+    }
+
+    .slider {
+        position: relative;
+        width: #{100%/$tab-count};
+        transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+
+        .indicator {
+            position: relative;
+            width: 50px;
+            max-width: 100%;
+            margin: 0 auto;
+            height: 4px;
+            background: #00ADB5;
+            border-radius: 1px;
+        }
+
+    }
+
+    .content {
+        margin-top: 30px;
+
+        section {
+            font-size: 2rem;
+            padding: 3rem;
+            display: none;
+
+            animation: {
+                name: content;
+                direction: normal;
+                duration: 0.5s;
+                timing-function: ease-in-out;
+                iteration-count: 1;
+            }
+
+            line-height: 1.25;
+
+            h2 {
+                color: #00ADB5;
+                display: none;
+
+                &::after {
+                    content: "";
+                    position: relative;
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    background: #00ADB5;
+                    margin-top: 5px;
+                    left: 1px;
+                }
+            }
+        }
+    }
+
+    input[name="tab-control"] {
+        @include tabs {
+            >label {
+                font-size: 1.2rem;
+                cursor: default;
+                color: #eee;
+
+                svg {
+                    height: 1.1em;
+                    color: #eee;
+                }
+            }
+        }
+    }
+
+    @keyframes content {
+        from {
+            opacity: 0;
+            transform: translateY(5%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}

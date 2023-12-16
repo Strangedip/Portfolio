@@ -1,12 +1,68 @@
-.main{
-    height: 850px;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Public+Sans:ital,wght@0,300;1,300;1,400&family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400');
+
+
+.main {
+    font-family: 'Raleway';
+    width: inherit;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #eeeeee;
+    padding: 20vh 0 ;
+}
+
+.intro {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3),
+        1px 1px 4px rgba(19, 108, 180, 0.45);
 }
-h1{
-    padding: 1rem;
-    font-size: 10rem;
+h3,h1{
+    animation: slideIn 1.2s;
+    animation-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hello {
+    text-align: start;
+    font-size: 2rem;
+    padding: 0 0 3rem 0;
+}
+
+
+.iam {
+    width: 100%;
+    text-align: start;
+    font-size: 2rem;
+}
+
+.name {
+    font-family: 'Signika Negative', sans-serif;
+    width: 100%;
+    font-size: 8rem;
+    text-shadow: -2px -2px 2px #072230,
+        3px 4px 2px #00ADB5,
+        6px 8px 2px #00090e81;
+}
+
+.role {
+    width: 100%;
+    text-align: end;
+    padding: 1rem 0 0 0;
+    font-size: 2rem;
 }
