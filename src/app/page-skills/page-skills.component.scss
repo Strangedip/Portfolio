@@ -1,7 +1,36 @@
-.main{
-    height: 850px;
+.main {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #FFF;
+}
+
+.skill-container {
+    width: 100%;
+}
+
+.languages,
+.tools,
+.frameworks {
+    border: 1px solid black;
+    margin: 0 auto;
+    display: grid;
+    width: 60%;
+    /* grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(5, 1fr);
+    /* gap: 20px 20px; */
+    /* row-gap: 20px;
+    column-gap: 20px; */
+}
+
+.languages>div,
+.tools>div,
+.frameworks>div {
+    
+    padding: 2rem;
 }

@@ -25,7 +25,8 @@
         0px 0px 8px 0px rgba(0, 0, 0, 0.1),
         inset 0px 12px 20px -10px rgba(131, 131, 131, 0.6);
     color: #c0c0c0;
-    background: transparent;
+    // background: transparent;
+    background: rgba(255, 255, 255, 0.03);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 172, 181, 0.25);
