@@ -16,11 +16,6 @@ $color4: #EEEEEE;
     
 }
 
-.sections {
-    width: 70%;
-
-}
-
 .svg-top {
     position: absolute;
     background: none;
@@ -39,7 +34,7 @@ $color4: #EEEEEE;
     }
 
     to {
-        transform: translateY(100);
+        transform: translateY(0);
         opacity: 1;
     }
 }

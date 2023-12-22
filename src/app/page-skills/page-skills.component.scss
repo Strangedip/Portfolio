@@ -10,27 +10,40 @@
 .skill-container {
     width: 100%;
 }
+.icon{
+    position:relative ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.icon>img{
+    width: 40px;
+}
+.icon:hover{
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.1);
+}
 
 .languages,
 .tools,
 .frameworks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 10rem));
+    justify-content: stretch;
+    align-items: stretch;
+    grid-auto-flow: row;
+    padding: 1rem;
+    gap: 1rem;
     border: 1px solid black;
     margin: 0 auto;
-    display: grid;
-    width: 60%;
-    /* grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr; */
-    grid-template-columns: repeat(5, 1fr);
-    /* gap: 20px 20px; */
-    /* row-gap: 20px;
-    column-gap: 20px; */
 }
 
 .languages>div,
 .tools>div,
 .frameworks>div {
     
-    padding: 2rem;
+    padding: 1rem;
 }
