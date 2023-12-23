@@ -4,16 +4,63 @@ $color3: #00ADB5;
 $color4: #EEEEEE;
 
 .container {
-    // background:linear-gradient(135deg, #060606 30%, #0c2b3e 100%);
-    background:linear-gradient(135deg, #00090e , #072230 );
+    // background:linear-gradient(135deg, #0d181f, #0c2b3e);
+    // background: linear-gradient(135deg, #00090e, #072230);
+    // background-image: linear-gradient(90deg, #071922 5%, #09293a 50%, #071922 95%);
+    // background: #071922;
+    background-image: linear-gradient(90deg, #011018 0%, #041A25 20%, #001F30 50%, #041A25 80%, #011018 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sections{
-    width: 70%;
-    
+
+section:nth-child(even) {
+    position: relative;
+    .quarter-circle-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        height: 5px;
+        background-color: #00acb5;
+        border-radius: 0 0 100% 0;
+
+    }
+
+    .quarter-circle-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60vw;
+        height: 5px;
+        background-color: #00ADB5;
+        border-radius: 100% 0 0 0 ; 
+    }
+}
+
+section:nth-child(odd) {
+    position: relative;
+    .quarter-circle-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 5px;
+        background-color: #00ADB5;
+        border-radius: 0 0 0 100%;
+
+    }
+
+    .quarter-circle-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60vw;
+        height: 5px;
+        background-color: #00ADB5;
+        border-radius: 0 100% 0 0;
+    }
 }
 
 .svg-top {
@@ -21,10 +68,6 @@ $color4: #EEEEEE;
     background: none;
     animation: slideInSvg 0.8s;
     animation-timing-function: ease-in-out;
-}
-
-.svg-bottom {
-    background: none;
 }
 
 @keyframes slideInSvg {

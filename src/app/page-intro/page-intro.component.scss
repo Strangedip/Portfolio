@@ -3,14 +3,14 @@
 
 
 .main {
+    margin: 0 auto;
     font-family: 'Raleway';
-    width: inherit;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: #eeeeee;
-    padding: 20vh 0 ;
 }
 
 .intro {
