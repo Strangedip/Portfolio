@@ -1,4 +1,14 @@
 <div class="main">
-    <p>page-project works!</p>
-    <h1>This is Projects</h1>
+    <h1>Projects</h1>
+    <div class="container">
+        <div class="project" *ngFor="let project of projects">
+            <a href="{{project.link}}" class="profile">
+                <div class="img" [style.backgroundImage]="'url(' + project.src + ')'">
+                    <div class="overlay"></div>
+                </div>
+                <div class="name">{{project.name}}</div>
+                <div class="desc">{{project.desc}}</div>
+            </a>
+        </div>
+    </div>
 </div>

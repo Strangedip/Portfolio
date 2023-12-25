@@ -3,14 +3,15 @@
 
 .main {
     margin: 0 auto;
-    height: 100vh;
-    width: 70%;
+    height: calc(100vh - 6px);
+    // width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFF;
 }
-.container{
+
+.container {
     margin-top: -3rem;
     display: flex;
     flex-direction: column;
@@ -39,7 +40,7 @@ $content-selector: "~ .content > section";
             }
 
             #{$slider-selector} {
-                transform: translateX(#{100% * ($i - 1)});
+                transform: translateX(calc(100% * ($i - 1)));
             }
 
             #{$content-selector}:nth-child(#{$i}) {
@@ -55,24 +56,28 @@ $content-selector: "~ .content > section";
     color: #fff;
     font-family: "Raleway";
 
+
     h1 {
-        color: #FFF;
+        font-family: "Raleway";
+        color: #00ADB5;
         text-align: center;
-        font-weight: 400;
-        padding: 3rem;
+        font-weight: 800;
+        padding: 0 0 3rem 0;
+        text-shadow: 2px 2px 2px #072230,
+            2px 4px 3px #00090ea4;
     }
 }
 
 .tabs {
-    background: transparent;
+    background: none;
     border: 1px solid rgba(0, 172, 181, 0.25);
-    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    padding: 2rem;
-    height: 400px;
+    padding: 2rem 4rem;
+    height: 50vh;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    min-width: #{$tab-count * 60px};
+    width: 70vw;
+    transition: 0.2s ease-out;
 
     input[name="tab-control"] {
         display: none;
@@ -80,9 +85,9 @@ $content-selector: "~ .content > section";
 
     .content section h2,
     ul li label {
-        font-family: 'Work Sans', sans-serif;;
+        font-family: 'Work Sans', sans-serif;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.25rem;
         color: #00ADB5;
     }
 
@@ -99,12 +104,12 @@ $content-selector: "~ .content > section";
         li {
             box-sizing: border-box;
             flex: 1;
-            width: #{100%/$tab-count};
+            width: calc(100% / $tab-count);
             padding: 0 10px;
             text-align: center;
 
             label {
-                font-size: 1.2rem;
+                font-size: 1.25rem;
                 transition: all 0.2s ease-in-out;
                 color: #a0a0a0;
                 padding: 5px auto;
@@ -144,7 +149,7 @@ $content-selector: "~ .content > section";
 
     .slider {
         position: relative;
-        width: #{100%/$tab-count};
+        width: calc(100% / $tab-count);
         transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
 
         .indicator {
@@ -163,9 +168,24 @@ $content-selector: "~ .content > section";
         margin-top: 30px;
 
         section {
-            font-size: 2rem;
-            padding: 3rem;
             display: none;
+            line-height: 1.5;
+
+            .desc {
+                font-weight: 100;
+                font-family: 'Work Sans', sans-serif;
+                width: 80%;
+                margin: 5rem auto;
+                font-size: 1.2rem;
+
+                .ed,
+                .ex,
+                .ad {
+                    text-align: center;
+                    padding: 0.6rem;
+                    line-height: 1.4;
+                }
+            }
 
             animation: {
                 name: content;
@@ -174,8 +194,6 @@ $content-selector: "~ .content > section";
                 timing-function: ease-in-out;
                 iteration-count: 1;
             }
-
-            line-height: 1.25;
 
             h2 {
                 color: #00ADB5;
@@ -198,7 +216,7 @@ $content-selector: "~ .content > section";
     input[name="tab-control"] {
         @include tabs {
             >label {
-                font-size: 1.2rem;
+                font-size: 1.25rem;
                 cursor: default;
                 color: #eee;
 

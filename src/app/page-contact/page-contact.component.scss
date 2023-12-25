@@ -1,7 +1,79 @@
-.main{
-    height: 100vh;
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
+
+.main {
+    height: calc(100vh - 6px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #FFF;
+}
+
+h1 {
+    font-family: "Raleway";
+    color: #00ADB5;
+    text-align: center;
+    font-weight: 800;
+    padding: 0 0 3rem 0;
+    text-shadow: 2px 2px 2px #072230,
+        2px 4px 3px #00090ea4;
+}
+
+.container {
+    font-family: "Raleway";
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hello-box {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    font-family: "Raleway";
+    font-size: 1.2rem;
+    font-weight: bolder;
+    width: 180px;
+    height: 50px;
+    background-color: #00ADB5;
+    color: #001e2e;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: box-shadow 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+button:hover{
+    box-shadow:none;
+    background-color: transparent;
+    color: #00ADB5;
+    border: 1px solid rgba(0, 172, 181);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: box-shadow 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+button:active{
+    background-color: #00ADB5;
+    color: #001e2e;
+    border: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    width: 40px;
 }
