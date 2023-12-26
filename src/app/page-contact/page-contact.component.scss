@@ -38,7 +38,7 @@ h1 {
     gap: 1rem;
 }
 
-button {
+.hello-btn>a>button {
     font-family: "Raleway";
     font-size: 1.2rem;
     font-weight: bolder;
@@ -53,27 +53,61 @@ button {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: box-shadow 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-button:hover{
-    box-shadow:none;
+
+.hello-btn>a>button:hover {
+    box-shadow: none;
     background-color: transparent;
     color: #00ADB5;
     border: 1px solid rgba(0, 172, 181);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: box-shadow 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-button:active{
+
+.hello-btn>a>button:active {
     background-color: #00ADB5;
     color: #001e2e;
     border: none;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .social {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
 .icon {
-    width: 40px;
+    text-align: center;
+    margin: 10px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        button {
+            cursor: pointer;
+            padding: 1rem;
+            background: none;
+            border: 1px solid transparent;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            border: 1px solid rgba(0, 172, 181, 0.25);
+            background: rgba(170, 170, 170, 0.05);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            svg{
+                transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            stroke-width: 2 !important;
+            }
+        }
+
+        button svg {
+            color: #00ADB5;
+        }
+    }
+}
+.footer{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: flex-end;
 }

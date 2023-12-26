@@ -19,18 +19,13 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .quarter-circle-top {
-        width: 75vw;
-        height: 3px;
-        background-color: #00acb5;
-        border-radius: 0% 100% 50% 50% / 0% 0% 100% 100%  ;
-    }
 
     .quarter-circle-bottom {
         width: 75vw;
-        height: 3px;
+        height: 6px;
         background-color: #00ADB5;
-        border-radius: 50% 50% 100% 0% / 100% 100% 0% 0% ;
+        border-radius:  100% ;
+        transform: translateY(3px);
     }
 }
 
