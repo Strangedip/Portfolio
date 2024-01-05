@@ -1,10 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap';
 
 .main {
     margin: 0 auto;
     height: calc(100vh - 6px);
-    // width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,12 +18,7 @@
     justify-content: center;
 }
 
-/* tab setting */
 $tab-count: 4;
-
-
-
-/* selectors relative to radio inputs */
 $label-selector: "~ ul > li";
 $slider-selector: "~ .slider";
 $content-selector: "~ .content > section";
@@ -32,7 +26,6 @@ $content-selector: "~ .content > section";
 @mixin tabs($label-selector: $label-selector,
     $slider-selector: $slider-selector,
     $content-selector: $content-selector) {
-
     @for $i from 1 through $tab-count {
         &:nth-of-type(#{$i}):checked {
             #{$label-selector}:nth-child(#{$i}) {
@@ -50,12 +43,9 @@ $content-selector: "~ .content > section";
     }
 }
 
-
-
 .main {
     color: #fff;
     font-family: "Raleway";
-
 
     h1 {
         font-family: "Raleway";
@@ -161,7 +151,6 @@ $content-selector: "~ .content > section";
             background: #00ADB5;
             border-radius: 1px;
         }
-
     }
 
     .content {
