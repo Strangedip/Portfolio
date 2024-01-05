@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "dev-strangedip",
+    "strangedip-portfolio": "dev-strangedip"
+  },
+  "targets": {},
+  "etags": {}
+}

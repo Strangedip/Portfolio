@@ -8,6 +8,9 @@
                 </div>
                 <div class="name">{{project.name}}</div>
                 <div class="desc">{{project.desc}}</div>
+                <div class="techs">
+                    <img *ngFor="let tech of project.techs" src="{{tech}}" alt="X">
+                </div>
             </a>
         </div>
     </div>
