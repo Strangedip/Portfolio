@@ -13,9 +13,9 @@ export class PageProjectsComponent implements OnInit {
   }
 
   projects: Project[] = [
-    new Project("Proj1", "proj1 desc", "proj1link", "assets/img/prj.jpeg"),
-    new Project("Proj2", "proj2 desc", "proj2link", "assets/img/prj.jpeg"),
-    new Project("Proj3", "proj3 desc", "proj3link", "assets/img/prj.jpeg")];
+    new Project("Elite School", "Management", "https://github.com/Strangedip/ProjectE", "assets/img/prj.jpeg"),
+    new Project("ColorMage", "BW to color", "https://github.com/Strangedip/ColorMage", "assets/img/colormage.png"),
+    new Project("Dev-Strangedip", "Portfolio", "https://github.com/Strangedip/Portfolio", "assets/img/portfolio.png")];
 }
 
 class Project {
