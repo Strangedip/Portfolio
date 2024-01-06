@@ -1,28 +1,29 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'float-navbar',
-  templateUrl: './float-navbar.component.html',
-  styleUrls: ['./float-navbar.component.scss'],
+  selector: 'ham-navbar',
+  templateUrl: './ham-navbar.component.html',
+  styleUrls: ['./ham-navbar.component.scss']
 })
-export class FloatNavbarComponent implements OnInit {
-  constructor() {
+export class HamNavbarComponent implements OnInit {
 
-  }
+  constructor() { }
 
   ngOnInit(): void {
     document.querySelector(`a[id="section-intro-"]`)?.classList.add('active');
   }
 
+  isNavbarOpen: boolean = false;
+
+  toggleNavbar(): void {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll() {
 
-    // to move navbar up or down
-    const navContainer = document.querySelector('.float-container');
-    const navbar = document.querySelector('.navbar');
+    const navContainer = document.querySelector('.container');
+    const navbar = document.querySelector('.ham-bar');
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     if (navContainer) {
       if (scrollPosition > window.innerHeight/2.5) {
@@ -37,13 +38,11 @@ export class FloatNavbarComponent implements OnInit {
     // to switch navbar tabs depending on scrolls
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
-      section.classList.remove('active');
-      console.log(section);
       const top = section.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       const bottom = section.getBoundingClientRect().bottom;
       const id = section.getAttribute('id');
-      if (top >= (0 - (windowHeight*(65/100))) && top < (windowHeight*(35/100))) {
+      if (top >= (0 - (windowHeight * (65 / 100))) && top < (windowHeight * (35 / 100))) {
         const element = document.querySelector(`a[id="${id}-"]`);
         if (element) {
           element.classList.add('active');
@@ -65,5 +64,6 @@ export class FloatNavbarComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    this.isNavbarOpen=!this.isNavbarOpen;
   }
 }

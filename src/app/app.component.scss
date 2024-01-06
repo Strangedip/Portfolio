@@ -15,7 +15,12 @@ $color4: #EEEEEE;
     overflow: hidden;
 }
 
-
+float-navbar{
+    display: block;
+}
+ham-navbar{
+    display: none;
+}
 section {
     display: flex;
     flex-direction: column;
@@ -46,5 +51,14 @@ section {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    float-navbar{
+        display: none;
+    }
+    ham-navbar{
+        display: block;
     }
 }

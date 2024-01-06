@@ -11,6 +11,7 @@ import { PageContactComponent } from './page-contact/page-contact.component';
 import { CommonModule } from '@angular/common';
 import { LogoBannerComponent } from './logo-banner/logo-banner.component';
 import { PageAboutComponent } from './page-about/page-about.component';
+import { HamNavbarComponent } from './ham-navbar/ham-navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PageAboutComponent } from './page-about/page-about.component';
     PageProjectsComponent,
     PageContactComponent,
     LogoBannerComponent,
-    PageAboutComponent
+    PageAboutComponent,
+    HamNavbarComponent
   ],
   imports: [
     BrowserModule,
