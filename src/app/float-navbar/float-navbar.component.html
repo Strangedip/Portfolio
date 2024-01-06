@@ -1,6 +1,11 @@
 <div class="float-container">
     <div class="navbar">
         <ul>
+            <!-- <li *ngFor="let section of sections" >
+                <a [class.active]="isSectionActive(section.id)" (click)="scrollTo(section.id)">
+                    {{ section.label }}
+                </a>
+            </li> -->
             <!-- <li *ngFor="let section of sections">
                 <a id="_{{section.id}}" (click)="scrollTo(section.id)">{{ section.name }}</a>
             </li> -->

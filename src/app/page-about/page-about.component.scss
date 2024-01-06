@@ -59,11 +59,13 @@ $content-selector: "~ .content > section";
 }
 
 .tabs {
+    font-size: 1rem;
     background: none;
     border: 1px solid rgba(0, 172, 181, 0.25);
     backdrop-filter: blur(8px);
     padding: 2rem 4rem;
     height: 50vh;
+    max-height: 600px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     width: 70vw;
@@ -77,7 +79,7 @@ $content-selector: "~ .content > section";
     ul li label {
         font-family: 'Work Sans', sans-serif;
         font-weight: bold;
-        font-size: 1.25rem;
+        font-size: 1.25em;
         color: #00ADB5;
     }
 
@@ -99,7 +101,7 @@ $content-selector: "~ .content > section";
             text-align: center;
 
             label {
-                font-size: 1.25rem;
+                font-size: 1.25em;
                 transition: all 0.2s ease-in-out;
                 color: #a0a0a0;
                 padding: 5px auto;
@@ -163,15 +165,15 @@ $content-selector: "~ .content > section";
             .desc {
                 font-weight: 100;
                 font-family: 'Work Sans', sans-serif;
-                width: 80%;
-                margin: 5rem auto;
-                font-size: 1.2rem;
+                width: 85%;
+                margin: 4vw auto;
+                font-size: 1.2em;
 
                 .ed,
                 .ex,
                 .ad {
                     text-align: center;
-                    padding: 0.6rem;
+                    padding: 0.6vw;
                     line-height: 1.4;
                 }
             }
@@ -205,7 +207,7 @@ $content-selector: "~ .content > section";
     input[name="tab-control"] {
         @include tabs {
             >label {
-                font-size: 1.25rem;
+                font-size: 1.25em;
                 cursor: default;
                 color: #eee;
 
@@ -227,5 +229,21 @@ $content-selector: "~ .content > section";
             opacity: 1;
             transform: translateY(0%);
         }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .tabs{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 900px) {
+    .tabs{
+        padding: 2vw 4vw;
+        height: 35vw;
+        font-size: 0.8rem;
+    }
+    label{
+        font-size: 1rem !important;
     }
 }

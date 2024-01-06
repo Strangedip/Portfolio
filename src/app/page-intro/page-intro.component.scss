@@ -23,10 +23,13 @@
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3),
         1px 1px 4px rgba(19, 108, 180, 0.45);
 }
-h3,h1{
+
+h3,
+h1 {
     animation: slideIn 1.5s;
-    animation-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -41,29 +44,44 @@ h3,h1{
 
 .hello {
     text-align: start;
-    font-size: 2rem;
-    padding: 0 0 3rem 0;
+    font-size: 2vw;
+    padding: 0 0 3vw 0;
 }
 
 
 .iam {
     width: 100%;
     text-align: start;
-    font-size: 2rem;
+    font-size: 2vw;
 }
 
 .name {
     font-family: 'Signika Negative', sans-serif;
     width: 100%;
-    font-size: 8rem;
+    font-size: 8vw;
     text-shadow: -2px -2px 2px #072230,
         3px 4px 2px #00ADB5,
         6px 8px 2px #00090e81;
+    animation: breathing 5s ease-out infinite normal;
 }
 
 .role {
     width: 100%;
     text-align: end;
-    padding: 1rem 0 0 0;
-    font-size: 2rem;
+    padding: 1vw 0 0 0;
+    font-size: 2vw;
+}
+
+@keyframes breathing {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
 }
