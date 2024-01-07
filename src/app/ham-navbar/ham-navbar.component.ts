@@ -10,7 +10,7 @@ export class HamNavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    document.querySelector(`a[id="section-intro-"]`)?.classList.add('active');
+    document.querySelector('#section-intro-')?.classList.add('active');
   }
 
   isNavbarOpen: boolean = false;
@@ -19,44 +19,59 @@ export class HamNavbarComponent implements OnInit {
     this.isNavbarOpen = !this.isNavbarOpen;
   }
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-
-    const navContainer = document.querySelector('.container');
-    const navbar = document.querySelector('.ham-bar');
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (navContainer) {
-      if (scrollPosition > window.innerHeight/2.5) {
-        navContainer.classList.add('scrolled');
-        navbar?.classList.add('bottom');
-      } else {
-        navContainer.classList.remove('scrolled');
-        navbar?.classList.remove('bottom');
-      }
-    }
-
-    // to switch navbar tabs depending on scrolls
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-      const top = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      const bottom = section.getBoundingClientRect().bottom;
-      const id = section.getAttribute('id');
-      if (top >= (0 - (windowHeight * (65 / 100))) && top < (windowHeight * (35 / 100))) {
-        const element = document.querySelector(`a[id="${id}-"]`);
-        if (element) {
-          element.classList.add('active');
-          element.classList.remove('inactive');
-        }
-      } else {
-        const element = document.querySelector(`a[id="${id}-"]`);
-        if (element) {
-          element.classList.add('inactive');
-          element.classList.remove('active');
-        }
-      }
-    });
+  sectionList = {
+    'section-intro': false,
+    'section-about': false,
+    'section-skills': false,
+    'section-projects': false,
+    'section-contact': false
   }
+
+  // @HostListener('window:scroll', ['$event'])
+  // onScroll() {
+  //   const sections = document.querySelectorAll('section');
+
+  //   sections.forEach(section => {
+  //     const top = section.getBoundingClientRect().top;
+  //     const id = section.getAttribute('id');
+
+  //     // Adjust these values based on your design
+  //     const thresholdTop = window.innerHeight * 0.65;
+  //     const thresholdBottom = window.innerHeight * 0.35;
+
+  //     if (top >= -thresholdTop && top < thresholdBottom) {
+  //       for (let sec in this.sectionList) {
+  //         if (id == sec) {
+  //           sec = true;
+  //         }
+  //         else {
+  //           sec = false;
+  //         }
+  //       }
+  //     }
+  //   });
+  // }
+  // introActive: boolean = true;
+  // aboutActive: boolean = false;
+  // skillsActive: boolean = false;
+  // projectActive: boolean = false;
+  // contactActive: boolean = false;
+  // activateNavbarTab(id: string | null): void {
+  //   const element = document.querySelector(`#${id}-`);
+  //   if (element) {
+  //     console.log(element);
+  //     element.classList.remove('inactive');
+  //     element.classList.add('active');
+  //   }
+  // }
+
+  // deactivateNavbarTab(id: string | null): void {
+  //   const element = document.querySelector(`#${id}-`);
+  //   if (element) {
+  //     element.classList.remove('active');
+  //     element.classList.add('inactive');
+  //   }
+  // }
 
   // click tab scrolls
   scrollTo(sectionId: string) {
@@ -64,6 +79,6 @@ export class HamNavbarComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    this.isNavbarOpen=!this.isNavbarOpen;
+    // this.isNavbarOpen=!this.isNavbarOpen;
   }
 }

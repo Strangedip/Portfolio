@@ -38,7 +38,6 @@ export class FloatNavbarComponent implements OnInit {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       section.classList.remove('active');
-      console.log(section);
       const top = section.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       const bottom = section.getBoundingClientRect().bottom;

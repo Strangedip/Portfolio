@@ -15,24 +15,26 @@ $color4: #EEEEEE;
     overflow: hidden;
 }
 
-float-navbar{
+float-navbar {
     display: block;
 }
-ham-navbar{
+
+ham-navbar {
     display: none;
 }
+
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-    .quarter-circle-bottom {
-        width: 75vw;
-        height: 6px;
-        background-color: #00ADB5;
-        border-radius:  100% ;
-        transform: translateY(3px);
-    }
+.quarter-circle-bottom {
+    width: 75vw;
+    height: 6px;
+    background-color: #00ADB5;
+    border-radius: 100%;
+    transform: translateY(3px);
 }
 
 .svg-top {
@@ -55,10 +57,18 @@ section {
 }
 
 @media screen and (max-width: 750px) {
-    float-navbar{
+    float-navbar {
         display: none;
     }
-    ham-navbar{
+
+    ham-navbar {
         display: block;
+    }
+
+    .quarter-circle-bottom {
+        width: 85vw;
+        height: 2px;
+        background-color: #00ADB5;
+        border-radius:  100% ;
     }
 }
