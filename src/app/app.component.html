@@ -1,38 +1,38 @@
-<logo-banner></logo-banner>
-<float-navbar></float-navbar>
-<ham-navbar></ham-navbar>
-<div class="container">
-    <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400">
-        <path fill="#00ADB5" fill-opacity="1"
-            d="M0,0L60,32C120,64,240,128,360,133.3C480,139,600,85,720,53.3C840,21,960,11,1080,42.7C1200,75,1320,149,1380,186.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-        </path>
-    </svg>
-    <div class="sections">
-        <section id="section-intro">
-            <page-intro></page-intro>
-            <div class="quarter-circle-bottom"></div>
-        </section>
-
-        <section id="section-about">
-            <page-about></page-about>
-            <div class="quarter-circle-bottom"></div>
-        </section>
-
-        <section id="section-skills">
-            <page-skills></page-skills>
-            <div class="quarter-circle-bottom"></div>
-        </section>
-
-        <section id="section-projects">
-            <page-projects></page-projects>
-            <div class="quarter-circle-bottom"></div>
-        </section>
-
-        <section id="section-contact">
-            <div class="quarter-circle-top"></div>
-            <page-contact></page-contact>
-            <div class="quarter-circle-bottom"></div>
-        </section>
-
+<div class="desktop-view">
+    <logo-banner></logo-banner>
+    <float-navbar *ngIf="desktopMode"></float-navbar>
+    <ham-navbar *ngIf="mobileMode"></ham-navbar>
+    <div class="container">
+        <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400">
+            <path fill="#00ADB5" fill-opacity="1"
+                d="M0,0L60,32C120,64,240,128,360,133.3C480,139,600,85,720,53.3C840,21,960,11,1080,42.7C1200,75,1320,149,1380,186.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
+        <div class="sections">
+            <section id="section-intro">
+                <page-intro *ngIf="desktopMode"></page-intro>
+                <page-intro-mobile *ngIf="mobileMode"></page-intro-mobile>
+                <div class="quarter-circle-bottom"></div>
+            </section>
+            <section id="section-about">
+                <page-about *ngIf="desktopMode"></page-about>
+                <page-about-mobile *ngIf="mobileMode"></page-about-mobile>
+                <div class="quarter-circle-bottom"></div>
+            </section>
+            <section id="section-skills">
+                <page-skills *ngIf="desktopMode"></page-skills>
+                <page-skills-mobile *ngIf="mobileMode"></page-skills-mobile>
+                <div class="quarter-circle-bottom"></div>
+            </section>
+            <section id="section-projects">
+                <page-projects></page-projects>
+                <div class="quarter-circle-bottom"></div>
+            </section>
+            <section id="section-contact">
+                <div class="quarter-circle-top"></div>
+                <page-contact></page-contact>
+                <div class="quarter-circle-bottom"></div>
+            </section>
+        </div>
     </div>
 </div>

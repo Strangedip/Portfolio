@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 import { LogoBannerComponent } from './logo-banner/logo-banner.component';
 import { PageAboutComponent } from './page-about/page-about.component';
 import { HamNavbarComponent } from './ham-navbar/ham-navbar.component';
+import { PageIntroMobileComponent } from './page-intro-mobile/page-intro-mobile.component';
+import { PageAboutMobileComponent } from './page-about-mobile/page-about-mobile.component';
+import { PageSkillsMobileComponent } from './page-skills-mobile/page-skills-mobile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { HamNavbarComponent } from './ham-navbar/ham-navbar.component';
     PageContactComponent,
     LogoBannerComponent,
     PageAboutComponent,
-    HamNavbarComponent
+    HamNavbarComponent,
+    PageIntroMobileComponent,
+    PageAboutMobileComponent,
+    PageSkillsMobileComponent
   ],
   imports: [
     BrowserModule,
