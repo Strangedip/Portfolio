@@ -12,17 +12,17 @@ export class HamNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isNavbarOpen: boolean = false;
+  isNavbarClose: boolean = false;
 
   toggleNavbar(): void {
-    this.isNavbarOpen = !this.isNavbarOpen;
+    this.isNavbarClose = !this.isNavbarClose;
   }
 
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      this.isNavbarOpen=!this.isNavbarOpen;
+      this.isNavbarClose=!this.isNavbarClose;
     }
   }
 }

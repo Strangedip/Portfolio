@@ -1,7 +1,8 @@
 <div class="container">
-    <div class="tabs">
-        <div class="tab" id="self" (click)="toggle('self')">
-            <div class="heading">
+    <h1>About</h1>
+    <div class="alltabs">
+        <div class="tab" id="self" [ngClass]="{'active':isSelf}">
+            <div class="heading" (click)="toggle('self')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-check" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -13,18 +14,17 @@
                     <path d="M15 19l2 2l4 -4" />
                 </svg>
                 <span>Myself</span>
+                <div class="bar"></div>
             </div>
-            <div class="desc">Hi, <br>I'm Sandip Gupta, a 23-year-old enthusiastic software/web developer specializing
-                in Full
-                Stack
-                Developement.
+            <div class="desc" style="font-size: 17px; text-align:start; padding:25px 10px 30px 30px">Hi, <br>I'm Sandip Gupta, a 23-year-old enthusiastic software/web developer specializing
+                in Full Stack Developement.
                 <br>Crafting seamless digital experiences is my forte, where coding is an art of
                 innovation. With a knack for problem-solving and adaptability, I bring a dynamic edge to every
                 project. Let's redefine the future of technology together.
             </div>
         </div>
-        <div class="tab" id="edu">
-            <div class="heading">
+        <div class="tab" id="edu" [ngClass]="{'active':isEdu}">
+            <div class="heading" (click)="toggle('edu')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-school" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -33,6 +33,7 @@
                     <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
                 </svg>
                 <span>Education</span>
+                <div class="bar"></div>
             </div>
             <div class="desc">
                 <div class="ed">
@@ -46,8 +47,8 @@
                 </div>
             </div>
         </div>
-        <div class="tab" id="exp">
-            <div class="heading">
+        <div class="tab" id="exp" [ngClass]="{'active':isExp}">
+            <div class="heading" (click)="toggle('exp')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-target-arrow" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -59,6 +60,7 @@
                     <path d="M15 9l-3 3" />
                 </svg>
                 <span>Experience</span>
+                <div class="bar"></div>
             </div>
             <div class="desc">
                 <div class="ex">
@@ -68,8 +70,8 @@
                 </div>
             </div>
         </div>
-        <div class="tab" id="add">
-            <div class="heading">
+        <div class="tab" id="add" [ngClass]="{'active':isAdd}">
+            <div class="heading" (click)="toggle('add')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -78,6 +80,7 @@
                     <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
                 </svg>
                 <span>Location</span>
+                <div class="bar"></div>
             </div>
             <div class="desc">
                 <div class="ad">

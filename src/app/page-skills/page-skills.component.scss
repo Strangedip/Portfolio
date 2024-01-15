@@ -1,6 +1,5 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
-
 .main {
+    padding: 2rem 0;
     margin: 0 auto;
     height: calc(100vh - 6px);
     display: flex;
@@ -12,7 +11,6 @@
 }
 
 #skill {
-    margin-top: 3em;
     font-family: "Raleway";
     color: #00ADB5;
     text-align: center;
@@ -72,7 +70,7 @@
 }
 
 .icon>img {
-    width: 36px;
+    width: 2.5em;
 }
 
 .icon:hover {
@@ -84,7 +82,46 @@
     .main {
         font-size: 0.8rem;
     }
-    .icon>img{
+
+    .icon>img {
         width: 4vw;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .main {
+        height: auto;
+        padding: 80px 0;
+    }
+
+    #skill {
+        font-size: 2em;
+        margin-top: 0;
+        padding-bottom: 50px;
+    }
+
+    .languages,
+    .tools,
+    .frameworks {
+        width: 80vw;
+    }
+
+    .languages>.icons,
+    .tools>.icons,
+    .frameworks>.icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .icon {
+        gap: 0px;
+        padding: 10px 0 5px 0;
+    }
+
+    .icon>img {
+        width: 2.5em;
     }
 }

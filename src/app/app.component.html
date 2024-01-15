@@ -11,7 +11,7 @@
         <div class="sections">
             <section id="section-intro">
                 <page-intro *ngIf="desktopMode"></page-intro>
-                <page-intro-mobile *ngIf="mobileMode"></page-intro-mobile>
+                <page-intro-mobile *ngIf="mobileMode" style="width: 100%;"></page-intro-mobile>
                 <div class="quarter-circle-bottom"></div>
             </section>
             <section id="section-about">
@@ -20,8 +20,7 @@
                 <div class="quarter-circle-bottom"></div>
             </section>
             <section id="section-skills">
-                <page-skills *ngIf="desktopMode"></page-skills>
-                <page-skills-mobile *ngIf="mobileMode"></page-skills-mobile>
+                <page-skills ></page-skills>
                 <div class="quarter-circle-bottom"></div>
             </section>
             <section id="section-projects">

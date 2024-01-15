@@ -14,7 +14,6 @@ import { PageAboutComponent } from './page-about/page-about.component';
 import { HamNavbarComponent } from './ham-navbar/ham-navbar.component';
 import { PageIntroMobileComponent } from './page-intro-mobile/page-intro-mobile.component';
 import { PageAboutMobileComponent } from './page-about-mobile/page-about-mobile.component';
-import { PageSkillsMobileComponent } from './page-skills-mobile/page-skills-mobile.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { PageSkillsMobileComponent } from './page-skills-mobile/page-skills-mobi
     PageAboutComponent,
     HamNavbarComponent,
     PageIntroMobileComponent,
-    PageAboutMobileComponent,
-    PageSkillsMobileComponent
+    PageAboutMobileComponent
   ],
   imports: [
     BrowserModule,

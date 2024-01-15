@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { strict } from 'assert';
 
 @Component({
   selector: 'page-about-mobile',
@@ -12,17 +13,25 @@ export class PageAboutMobileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggle(tabName : string){
-    const tabs = document.querySelectorAll('tab');
-    tabs.forEach(tab=>{
-      const element = document.querySelector(`${tabName}`);
-      if(tab == element){
-        element.classList.add('active');
-      }
-      else{
-        
-      }
-    })
-    
+  isSelf=false;
+  isEdu=false;
+  isExp=false;
+  isAdd=false;
+
+  toggle(tabName: string) {
+    switch (tabName) {
+      case 'self':
+        this.isSelf=!this.isSelf;
+        break;
+      case 'edu':
+        this.isEdu=!this.isEdu;
+        break;
+      case 'exp':
+        this.isExp=!this.isExp;
+        break;
+      case 'add':
+        this.isAdd=!this.isAdd;
+        break;
+    }
   }
 }
