@@ -2,7 +2,7 @@
     font-size: 1rem;
     color: aliceblue;
 }
-.tabs{
+.alltabs{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,5 +28,6 @@
 }
 .tab.active{
     height: fit-content;
+    transition: 0.8s;
 }
 

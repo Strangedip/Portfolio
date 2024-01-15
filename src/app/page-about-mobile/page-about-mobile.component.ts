@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { CLIENT_RENEG_LIMIT } from 'tls';
 
 @Component({
   selector: 'page-about-mobile',
@@ -12,17 +13,18 @@ export class PageAboutMobileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggle(tabName : string){
-    const tabs = document.querySelectorAll('tab');
-    tabs.forEach(tab=>{
-      const element = document.querySelector(`${tabName}`);
-      if(tab == element){
+  toggle(tabName: string) {
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      const element = document.querySelector(`#${tabName}`);
+      console.log(tab, element);
+      if (element) {
         element.classList.add('active');
       }
-      else{
-        
+      else {
+        tab.classList.remove('active');
       }
     })
-    
+
   }
 }
