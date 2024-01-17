@@ -1,7 +1,7 @@
 
 .main {
     margin: 0 auto;
-    height: calc(100vh - 6px);
+    min-height: calc(100vh - 6px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +50,7 @@ $content-selector: "~ .content > section";
         color: #00ADB5;
         text-align: center;
         font-weight: 800;
-        padding: 0 0 3rem 0;
+        padding: 1rem 0 3rem 0;
         text-shadow: 2px 2px 2px #072230,
             2px 4px 3px #00090ea4;
     }
@@ -62,7 +62,7 @@ $content-selector: "~ .content > section";
     border: 1px solid rgba(0, 172, 181, 0.25);
     backdrop-filter: blur(8px);
     padding: 2rem 4rem;
-    height: 50vh;
+    min-height: 50vh;
     max-height: 600px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
