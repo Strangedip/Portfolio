@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'page-projects',
   templateUrl: './page-projects.component.html',
-  styleUrls: ['./page-projects.component.scss']
+  styleUrls: ['./page-projects.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
-export class PageProjectsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class PageProjectsComponent {
 
   projects: Project[] = [
     new Project("Elite School", "Management", "https://github.com/Strangedip/ProjectE", "assets/img/prj.jpeg",["assets/png-icons/java.png","assets/png-icons/mysql.png","assets/png-icons/intellij.png"]),

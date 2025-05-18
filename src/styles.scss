@@ -1,6 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Font Families */
+  --font-primary: 'Space Grotesk', sans-serif;    /* For headings and important text */
+  --font-secondary: 'Inter', sans-serif;          /* For body text and general content */
+  --font-accent: 'Plus Jakarta Sans', sans-serif; /* For special elements and accents */
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-regular);
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-semibold);
+}
+
+button, .btn {
+  font-family: var(--font-accent);
+  font-weight: var(--font-medium);
+}
+

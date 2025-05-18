@@ -1,68 +1,105 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
+interface NavSection {
+  id: string;
+  label: string;
+}
 
 @Component({
   selector: 'float-navbar',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './float-navbar.component.html',
-  styleUrls: ['./float-navbar.component.scss'],
+  styleUrls: ['./float-navbar.component.scss']
 })
 export class FloatNavbarComponent implements OnInit {
-  constructor() {
+  sections: NavSection[] = [
+    { id: 'section-intro', label: 'Hello' },
+    { id: 'section-about', label: 'About' },
+    { id: 'section-skills', label: 'Skills' },
+    { id: 'section-projects', label: 'Projects' },
+    { id: 'section-contact', label: 'Contact' }
+  ];
 
-  }
+  activeSection: string = 'section-intro';
+  isScrolling: boolean = false;
+  isScrolled: boolean = false;
+  private scrollTimeout: any;
 
-  ngOnInit(): void {
-    document.querySelector(`a[id="section-intro-"]`)?.classList.add('active');
+  ngOnInit() {
+    this.setInitialActiveSection();
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
+    if (!this.isScrolling) {
+      this.updateActiveSection();
+    }
+    this.isScrolled = window.scrollY > 100;
 
-    // to move navbar up or down
-    const navContainer = document.querySelector('.float-container');
-    const navbar = document.querySelector('.navbar');
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (navContainer) {
-      if (scrollPosition > window.innerHeight/2.5) {
-        navContainer.classList.add('scrolled');
-        navbar?.classList.add('bottom');
-      } else {
-        navContainer.classList.remove('scrolled');
-        navbar?.classList.remove('bottom');
+    // Clear any existing timeout
+    if (this.scrollTimeout) {
+      clearTimeout(this.scrollTimeout);
+    }
+
+    // Set a new timeout to detect when scrolling has stopped
+    this.scrollTimeout = setTimeout(() => {
+      this.isScrolling = false;
+      this.updateActiveSection();
+    }, 150);
+  }
+
+  private setInitialActiveSection() {
+    const scrollPosition = window.scrollY;
+    this.updateActiveSection();
+    this.isScrolled = scrollPosition > 100;
+  }
+
+  private updateActiveSection() {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const offset = windowHeight * 0.3;
+
+    let closestSection = this.sections[0];
+    let closestDistance = Infinity;
+
+    for (const section of this.sections) {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const distance = Math.abs(rect.top - offset);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = section;
+        }
       }
     }
 
-    // to switch navbar tabs depending on scrolls
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-      const top = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      const bottom = section.getBoundingClientRect().bottom;
-      const id = section.getAttribute('id');
-      if (top >= (0 - (windowHeight*(65/100))) && top < (windowHeight*(35/100))) {
-        const element = document.querySelector(`a[id="${id}-"]`);
-        if (element) {
-          element.classList.add('active');
-          element.classList.remove('inactive');
-        }
-      } else {
-        const element = document.querySelector(`a[id="${id}-"]`);
-        if (element) {
-          element.classList.add('inactive');
-          element.classList.remove('active');
-        }
-      }
-    });
+    this.activeSection = closestSection.id;
   }
 
-  // click tab scrolls
   scrollTo(sectionId: string) {
+    this.isScrolling = true;
+    this.activeSection = sectionId; // Update active section immediately
+
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Use a shorter timeout and update active section again after scroll
+      setTimeout(() => {
+        this.isScrolling = false;
+        this.updateActiveSection();
+      }, 500);
     }
   }
 }

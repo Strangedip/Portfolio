@@ -1,9 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ham-navbar',
   templateUrl: './ham-navbar.component.html',
-  styleUrls: ['./ham-navbar.component.scss']
+  styleUrls: ['./ham-navbar.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class HamNavbarComponent implements OnInit {
 

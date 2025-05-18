@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'page-contact',
   templateUrl: './page-contact.component.html',
-  styleUrls: ['./page-contact.component.scss']
+  styleUrls: ['./page-contact.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
-export class PageContactComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class PageContactComponent {
 }

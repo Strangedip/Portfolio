@@ -1,36 +1,39 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { strict } from 'assert';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'page-about-mobile',
   templateUrl: './page-about-mobile.component.html',
-  styleUrls: ['./page-about-mobile.component.scss']
+  styleUrls: ['./page-about-mobile.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
-export class PageAboutMobileComponent implements OnInit {
+export class PageAboutMobileComponent {
+  isSelf = true;
+  isEdu = false;
+  isExp = false;
+  isAdd = false;
 
-  constructor() { }
+  toggle(section: 'self' | 'edu' | 'exp' | 'add') {
+    // Reset all sections
+    this.isSelf = false;
+    this.isEdu = false;
+    this.isExp = false;
+    this.isAdd = false;
 
-  ngOnInit(): void {
-  }
-
-  isSelf=false;
-  isEdu=false;
-  isExp=false;
-  isAdd=false;
-
-  toggle(tabName: string) {
-    switch (tabName) {
+    // Set the selected section
+    switch (section) {
       case 'self':
-        this.isSelf=!this.isSelf;
+        this.isSelf = true;
         break;
       case 'edu':
-        this.isEdu=!this.isEdu;
+        this.isEdu = true;
         break;
       case 'exp':
-        this.isExp=!this.isExp;
+        this.isExp = true;
         break;
       case 'add':
-        this.isAdd=!this.isAdd;
+        this.isAdd = true;
         break;
     }
   }

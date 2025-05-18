@@ -6,30 +6,56 @@ $color2: #393E46;
 $color3: #00ADB5;
 $color4: #EEEEEE;
 
+.app-container {
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    
+    &.loaded {
+        opacity: 1;
+    }
+}
+
 .container {
-    // background:linear-gradient(135deg, #0d181f, #0c2b3e);
-    // background: linear-gradient(135deg, #00090e, #072230);
-    // background-image: linear-gradient(90deg, #071922 5%, #09293a 50%, #071922 95%);
-    // background: #071922;
     background-image: linear-gradient(90deg, #011018 0%, #041A25 20%, #001F30 50%, #041A25 80%, #011018 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
 }
 
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 3rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    
+    @media screen and (max-width: 750px) {
+        padding: 1.5rem 0;
+    }
 }
 
 .quarter-circle-bottom {
     width: 75vw;
-    height: 6px;
-    background-color: #00ADB5;
+    height: 4px;
+    background-color: $color3;
     border-radius: 100%;
-    transform: translateY(3px);
+    transform: translateY(2px);
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+    margin: 1.5rem 0;
+    
+    &:hover {
+        opacity: 1;
+        transform: translateY(1px) scale(1.02);
+    }
 }
 
 .svg-top {
@@ -37,6 +63,9 @@ section {
     background: none;
     animation: slideInSvg 0.8s;
     animation-timing-function: ease-in-out;
+    width: 100%;
+    height: auto;
+    z-index: 1;
 }
 
 @keyframes slideInSvg {
@@ -52,10 +81,14 @@ section {
 }
 
 @media screen and (max-width: 750px) {
-    .quarter-circle-bottom {
+    .quarter-circle-bottom,
+    .quarter-circle-top {
         width: 85vw;
         height: 2px;
-        background-color: #00ADB5;
-        border-radius:  100% ;
+        margin: 1rem 0;
+    }
+    
+    section {
+        padding: 1rem 0;
     }
 }

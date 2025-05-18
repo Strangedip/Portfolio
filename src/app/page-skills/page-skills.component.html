@@ -1,94 +1,42 @@
 <div class="main">
-    <h1 id="skill">Skills</h1>
+    <h1 id="skill">Technical Expertise</h1>
     <div class="skill-container">
-        <div class="languages">
-            <div class="heading">Languages</div>
-            <div class="icons">
-                <div class="icon">
-                    <img src="assets/png-icons/java.png" name="java" alt="Java">
-                    <label for="java">Java</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/python.png" name="python" alt="PY">
-                    <label for="python">Python</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/js.png" name="js" alt="JS">
-                    <label for="js">Javascript</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/typescript.png" name="ts" alt="TS">
-                    <label for="ts">Typescript</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/c-.png" name="c" alt="C++">
-                    <label for="c">C/C++</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/html-5.png" name="html" alt="HTML">
-                    <label for="html">HTML</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/css-3.png" name="CSS" alt="CSS">
-                    <label for="CSS">CSS</label>
+        <div class="skill-row">
+            <div class="skill-type">Languages</div>
+            <div class="skills-list">
+                <div class="skill-item" *ngFor="let skill of programmingLanguages">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <span>{{skill.name}}</span>
                 </div>
             </div>
         </div>
-        <div class="frameworks">
-            <div class="heading">Frameworks/Databases</div>
-            <div class="icons">
-                <div class="icon">
-                    <img src="assets/png-icons/angular.png" name="angular" alt="Angular">
-                    <label for="angular">Angular</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/springboot.png" name="springboot" alt="Springboot">
-                    <label for="springboot">Springboot</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/mysql.png" name="mysql" alt="MySQL">
-                    <label for="mysql">MySQL</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/postgre.png" name="postgre" alt="PostreSQL">
-                    <label for="postgre">PostreSQL</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/sql-server.png" name="sql-server" alt="MS SQL">
-                    <label for="sql-server">MS SQL</label>
+
+        <div class="skill-row">
+            <div class="skill-type">Frameworks</div>
+            <div class="skills-list">
+                <div class="skill-item" *ngFor="let skill of frameworks">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <span>{{skill.name}}</span>
                 </div>
             </div>
         </div>
-        <div class="tools">
-            <div class="heading">Others</div>
-            <div class="icons">
-                <div class="icon">
-                    <img src="assets/png-icons/github.png" name="github" alt="GitHub">
-                    <label for="github">GitHub</label>
+
+        <div class="skill-row">
+            <div class="skill-type">Databases</div>
+            <div class="skills-list">
+                <div class="skill-item" *ngFor="let skill of databases">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <span>{{skill.name}}</span>
                 </div>
-                <div class="icon">
-                    <img src="assets/png-icons/bitbucket.png" name="bitbucket" alt="BitBucket">
-                    <label for="bitbucket">BitBucket</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/firebase.png" name="firebase" alt="Firebase">
-                    <label for="firebase">Firebase</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/vscode.png" name="vscode" alt="VS code">
-                    <label for="vscode">VS code</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/intellij.png" name="intellij" alt="IntelliJ">
-                    <label for="intellij">IntelliJ</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/photoshop.png" name="photoshop" alt="Photoshop">
-                    <label for="photoshop">Photoshop</label>
-                </div>
-                <div class="icon">
-                    <img src="assets/png-icons/canva.png" name="canva" alt="Canva">
-                    <label for="canva">Canva</label>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-type">Tools</div>
+            <div class="skills-list">
+                <div class="skill-item" *ngFor="let skill of tools">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <span>{{skill.name}}</span>
                 </div>
             </div>
         </div>
