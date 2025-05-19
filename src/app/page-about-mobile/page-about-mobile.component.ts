@@ -12,14 +12,12 @@ export class PageAboutMobileComponent {
   isSelf = true;
   isEdu = false;
   isExp = false;
-  isAdd = false;
 
-  toggle(section: 'self' | 'edu' | 'exp' | 'add') {
+  toggle(section: 'self' | 'edu' | 'exp') {
     // Reset all sections
     this.isSelf = false;
     this.isEdu = false;
     this.isExp = false;
-    this.isAdd = false;
 
     // Set the selected section
     switch (section) {
@@ -31,9 +29,6 @@ export class PageAboutMobileComponent {
         break;
       case 'exp':
         this.isExp = true;
-        break;
-      case 'add':
-        this.isAdd = true;
         break;
     }
   }
