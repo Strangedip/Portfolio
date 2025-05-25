@@ -1,15 +1,19 @@
 <div class="main">
     <h1>Projects</h1>
     <div class="container">
-        <div class="project" *ngFor="let project of projects">
-            <a href="{{project.link}}" class="profile">
+        <div class="project fade-in" *ngFor="let project of projects">
+            <a href="{{project.link}}" class="profile" tabindex="0" [attr.aria-label]="'View project: ' + project.name">
                 <div class="img" [style.backgroundImage]="'url(' + project.src + ')'">
+                    <img [src]="project.src" [alt]="project.name + ' screenshot'" (error)="project.src='assets/img/fallback.png'" style="display:none;" />
                     <div class="overlay"></div>
                 </div>
                 <div class="name">{{project.name}}</div>
-                <div class="desc">{{project.desc}}</div>
+                <div class="tag">{{project.desc}}</div>
                 <div class="techs">
-                    <img *ngFor="let tech of project.techs" src="{{tech}}" alt="X">
+                    <img *ngFor="let tech of project.techs" [src]="tech" [alt]="tech + ' icon'">
+                </div>
+                <div class="actions">
+                    <a [href]="project.link" target="_blank" class="btn-action" [attr.aria-label]="'View on GitHub for ' + project.name">View on GitHub</a>
                 </div>
             </a>
         </div>

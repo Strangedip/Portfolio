@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     color: #FFF;
-    font-size: 1rem;
+    font-size: 1.05rem;
     padding: 2rem 1.5rem;
     width: 100%;
     max-width: 1400px;
@@ -33,14 +33,14 @@ h1 {
 
 .project {
     width: 100%;
-    height: 380px;
+    height: 28rem;
     border-radius: 12px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.25);
     color: #c0c0c0;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 172, 181, 0.25);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
 
@@ -64,13 +64,14 @@ h1 {
 }
 
 .img {
+    min-height: 80px;
     width: 100%;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .overlay {
@@ -102,19 +103,20 @@ a {
 
     .name {
         padding-top: 0.4em;
-        font-size: 1.6em;
-        font-weight: var(--font-semibold);
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-weight: var(--font-bold);
         margin-bottom: 0.5rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-family: var(--font-accent);
+        font-family: var(--font-primary);
     }
 
     .desc {
-        font-size: 1.1em;
+        font-size: 1rem;
         line-height: 1.4;
         margin-bottom: 0.8rem;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         font-weight: var(--font-regular);
+        font-family: var(--font-secondary);
     }
 
     .techs {
@@ -138,6 +140,54 @@ a {
                 filter: grayscale(0);
             }
         }
+    }
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.btn-action {
+    background: #00ADB5;
+    color: #fff;
+    padding: 0.4rem 1.1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,173,181,0.10);
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+
+.btn-action:hover, .btn-action:focus {
+    background: #007B8A;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,173,181,0.18);
+}
+
+.btn-action + .btn-action {
+    margin-left: 0.7rem;
+}
+
+.fade-in {
+    animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -222,7 +272,7 @@ a {
 
 @media screen and (max-width: 480px) {
     .project {
-        height: 280px;
+        height: 25rem;
         width: 80vw;
     }
 
@@ -246,5 +296,20 @@ a {
                 height: 1.5rem;
             }
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        font-size: 0.98rem;
+    }
+    .name {
+        font-size: 1.1rem;
+    }
+    .tag {
+        font-size: 0.95rem;
+    }
+    .desc {
+        font-size: 0.92rem;
     }
 }

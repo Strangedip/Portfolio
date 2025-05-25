@@ -1,42 +1,13 @@
 <div class="main">
     <h1 id="skill">Technical Expertise</h1>
     <div class="skill-container">
-        <div class="skill-row">
-            <div class="skill-type">Languages</div>
+        <div class="skill-row fade-in" *ngFor="let row of skillRows">
+            <div class="skill-type">{{row.type}}</div>
             <div class="skills-list">
-                <div class="skill-item" *ngFor="let skill of programmingLanguages">
+                <div class="skill-item" *ngFor="let skill of row.skills">
                     <img [src]="skill.icon" [alt]="skill.name">
                     <span>{{skill.name}}</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="skill-row">
-            <div class="skill-type">Frameworks</div>
-            <div class="skills-list">
-                <div class="skill-item" *ngFor="let skill of frameworks">
-                    <img [src]="skill.icon" [alt]="skill.name">
-                    <span>{{skill.name}}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-type">Databases</div>
-            <div class="skills-list">
-                <div class="skill-item" *ngFor="let skill of databases">
-                    <img [src]="skill.icon" [alt]="skill.name">
-                    <span>{{skill.name}}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-type">Tools</div>
-            <div class="skills-list">
-                <div class="skill-item" *ngFor="let skill of tools">
-                    <img [src]="skill.icon" [alt]="skill.name">
-                    <span>{{skill.name}}</span>
                 </div>
             </div>
         </div>
