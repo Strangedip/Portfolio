@@ -26,19 +26,20 @@ export class PageProjectsComponent {
       "https://elite-school-demo.com"
     ),
     new Project(
-      "ColorMage",
-      "AI-powered tool that transforms black & white images into vibrant color. Creative and restoration project",
-      "https://github.com/Strangedip/ColorMage",
-      "assets/img/colormage.png",
+      "DashLink",
+      "Webapplication to store bookmarks of places locations links ets.",
+      "https://github.com/Strangedip/Dashlink",
+      "assets/img/dashlink.png",
       [
-        "assets/png-icons/python.png",
+        "assets/png-icons/angular.png",
+        "assets/png-icons/typescript.png",
+        "assets/png-icons/firebase.png",
         "assets/png-icons/html-5.png",
-        "assets/png-icons/css-3.png",
-        "assets/png-icons/vscode.png"
+        "assets/png-icons/scss.png",
+        "assets/png-icons/cursor.png"
       ],
-      "https://colormage-demo.com"
-    ),
-    new Project(
+      "https://dashlink-prj.web.app", true
+    ), new Project(
       "(This Portfolio)",
       "My personal developer portfolio, built with Angular18, showcasing my projects, skills, and contact info.",
       "https://github.com/Strangedip/Portfolio",
@@ -50,7 +51,20 @@ export class PageProjectsComponent {
         "assets/png-icons/css-3.png",
         "assets/png-icons/vscode.png"
       ],
-      "https://portfolio-demo.com"
+      "https://dev-strangedip.web.app", true
+    ),
+    new Project(
+      "ColorMage",
+      "AI-powered tool that transforms black & white images into vibrant color. Creative and restoration project",
+      "https://github.com/Strangedip/ColorMage",
+      "assets/img/colormage.png",
+      [
+        "assets/png-icons/python.png",
+        "assets/png-icons/html-5.png",
+        "assets/png-icons/css-3.png",
+        "assets/png-icons/vscode.png"
+      ],
+      "https://colormage-demo.com"
     )
   ];
 }
@@ -61,14 +75,16 @@ class Project {
   link: String;
   src: String;
   techs: String[];
+  isDemoAvailable: boolean;
   demo?: String;
-  constructor(name: String, desc: String, link: String, src: String, techs: String[], demo?: String) {
+  constructor(name: String, desc: String, link: String, src: String, techs: String[], demo?: String, isDemoAvailable: boolean = false) {
     this.name = name;
     this.desc = desc;
     this.link = link;
     this.src = src;
     this.techs = techs;
     this.demo = demo;
+    this.isDemoAvailable = isDemoAvailable;
   }
 }
 

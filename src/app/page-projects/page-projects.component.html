@@ -12,8 +12,9 @@
                 <div class="techs">
                     <img *ngFor="let tech of project.techs" [src]="tech" [alt]="tech + ' icon'">
                 </div>
-                <div class="actions">
-                    <a [href]="project.link" target="_blank" class="btn-action" [attr.aria-label]="'View on GitHub for ' + project.name">View on GitHub</a>
+                <div class="actions" [ngClass]="{'two-buttons': project.isDemoAvailable, 'one-button': !project.isDemoAvailable}">
+                    <a *ngIf="project.isDemoAvailable" [href]="project.demo" target="_blank" class="btn-action" [attr.aria-label]="'View demo for ' + project.name">Demo</a>
+                    <a [href]="project.link" target="_blank" class="btn-action" [attr.aria-label]="'View on GitHub for ' + project.name">Code</a>
                 </div>
             </a>
         </div>

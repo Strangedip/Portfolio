@@ -149,6 +149,14 @@ a {
     justify-content: center;
     margin-top: 1rem;
     text-align: center;
+
+    &.two-buttons {
+        justify-content: space-around;
+    }
+
+    &.one-button {
+        justify-content: center;
+    }
 }
 
 .btn-action {
