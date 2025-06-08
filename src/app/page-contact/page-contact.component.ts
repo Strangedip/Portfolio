@@ -15,7 +15,4 @@ export class PageContactComponent {
     navigator.clipboard.writeText(email);
     alert('Email address copied to clipboard!');
   }
-  popup(){
-    alert('Resume is yet to be built and uploaded!');
-  }
 }
